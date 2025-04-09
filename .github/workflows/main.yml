@@ -15,10 +15,10 @@ jobs:
         with:
           python-version: "3.9"
 
-      - name: Install dependencies and run tests
-        run: |
-          pip install -r requirements.txt
-          pytest tests/
+	- name: Install dependencies and run tests
+	  run: |
+   	 pip install -r requirements.txt
+   	 PYTHONPATH=. pytest tests/
 
       - name: Build Docker image
         run: docker build -t ci-cd:latest .
